@@ -10,7 +10,6 @@ export default function Home() {
 
   useEffect(() => {
     if (!api) return;
-
     api.on("select", () => {
       setCurrentIndex(api.selectedScrollSnap());
     });
@@ -19,9 +18,9 @@ export default function Home() {
   const rotation = currentIndex * 90;
 
   return (
-    <main className="relative w-full h-screen ">
+    <main className="w-full h-screen">
       <Hero rotation={rotation} />
-      <SpinnerCarousel setApi={setApi} />
+      <SpinnerCarousel setApi={setApi} currentIndex={currentIndex} />
     </main>
   );
 }

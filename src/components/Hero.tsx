@@ -16,7 +16,7 @@ function Hero({ rotation }: { rotation: number }) {
           src="/mainimg.png"
           alt="Main Image"
           fill
-          className="object-contain"
+          className="object-contain z-0"
           priority
         />
       </motion.div>

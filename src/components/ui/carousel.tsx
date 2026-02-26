@@ -5,7 +5,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/components/lib/utils";
 import { Button } from "@/src/components/ui/button";
 import { Icons } from "../shared/Icons";
 

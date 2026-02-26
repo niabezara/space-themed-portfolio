@@ -1,3 +1,4 @@
+import { RevealCard } from "./Card";
 import { data } from "./data";
 import {
   Carousel,
@@ -8,20 +9,29 @@ import {
   type CarouselApi,
 } from "./ui/carousel";
 
-function SpinnerCarousel({ setApi }: { setApi: (api: CarouselApi) => void }) {
+function SpinnerCarousel({
+  setApi,
+  currentIndex,
+}: {
+  setApi: (api: CarouselApi) => void;
+  currentIndex: number;
+}) {
   return (
-    <Carousel setApi={setApi} className="absolute inset-0 z-10">
-      <CarouselContent className="h-full">
+    <Carousel setApi={setApi} className="absolute inset-0 ">
+      <CarouselContent className="h-full absolute -bottom-50 w-full ">
         {data.map((item, index) => (
           <CarouselItem key={index}>
-            <div className="w-full h-full flex items-center justify-center text-black text-4xl font-bold z-20">
-              {item.title}
-            </div>
+            <RevealCard
+              title={item.title}
+              answer={item.answer}
+              key={`${index}-${currentIndex}`}
+              resetKey={currentIndex}
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
       {/* navigation buttons */}
-      <div className="absolute flex justify-between w-full top-1/2 -translate-y-1/2 px-4">
+      <div className="flex justify-between w-full px-4">
         <CarouselPrevious />
         <CarouselNext />
       </div>
