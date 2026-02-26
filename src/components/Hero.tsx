@@ -4,9 +4,9 @@ import Image from "next/image";
 
 function Hero({ rotation }: { rotation: number }) {
   return (
-    <div className="absolute bottom-0 w-full h-[70vh] overflow-hidden flex justify-center items-top">
+    <div className="absolute bottom-0 w-full h-[50vh] overflow-hidden flex justify-center items-top">
       <motion.div
-        className="relative flex-shrink-0 "
+        className="relative shrink-0 "
         style={{ width: "100vw", height: "100vw" }}
         animate={{ rotate: rotation }}
         transition={{ type: "spring", stiffness: 80, damping: 20 }}

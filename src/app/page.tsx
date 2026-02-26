@@ -1,8 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import Hero from "../components/Hero";
 import SpinnerCarousel from "../components/SpinnerCarousel";
 import { CarouselApi } from "../components/ui/carousel";
+import { data } from "../components/data";
 
 export default function Home() {
   const [api, setApi] = useState<CarouselApi>();
@@ -15,10 +18,38 @@ export default function Home() {
     });
   }, [api]);
 
+  const currentBg = data[currentIndex].bg;
   const rotation = currentIndex * 90;
 
   return (
-    <main className="w-full h-screen">
+    <main className="relative w-screen h-screen overflow-hidden">
+      {/* 🔥 Animated Background */}
+      <AnimatePresence>
+        {data.map((item, index) =>
+          index === currentIndex ? (
+            <motion.div
+              key={item.bg}
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${item.bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            />
+          ) : null,
+        )}
+      </AnimatePresence>
+      {/* Optional dark overlay for depth */}
+      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+
+      {/* Content */}
       <Hero rotation={rotation} />
       <SpinnerCarousel setApi={setApi} currentIndex={currentIndex} />
     </main>

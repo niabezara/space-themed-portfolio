@@ -1,10 +1,25 @@
-export const data = [
+import { SlideData } from "./types";
+
+export const data: SlideData[] = [
   {
-    title: "CLICK TO OPEN 1",
-    answer: "Here is the hidden answer 1",
+    main: "Hello Fellas",
+    title: "I am Nia",
+    question: "Who am I?",
+    answer: "I'm a frontend developer passionate about React and Next.js.",
+    bg: "/mainbg.png", // neutral background
   },
   {
-    title: "CLICK TO OPEN 2",
-    answer: "Another answer here 2",
+    main: "Skills",
+    title: "My Skills",
+    question: "What can I do?",
+    answer: "React, Next.js, TypeScript, Tailwind CSS, Node.js, and more.",
+    bg: "/second.png",
+  },
+  {
+    main: "my work",
+    title: "My Projects",
+    question: "What have I built?",
+    answer: "I've built several web apps, landing pages, and internal tools.",
+    bg: "/thiredbg.png",
   },
 ];

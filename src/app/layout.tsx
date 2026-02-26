@@ -29,14 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${bebasNeue.variable} antialiased bg-[url('/mainbg.png')] bg-cover bg-center bg-no-repeat`}
+        className={`${geistSans.variable} ${bebasNeue.variable} antialiased overflow-x-hidden`}
       >
-        <ViewportContainer>
-          <ScalableContent>
-            <Navigation />
-            {children}
-          </ScalableContent>
-        </ViewportContainer>
+        {/* <ViewportContainer>
+          <ScalableContent> */}
+        {/* <Navigation /> */}
+        {children}
+        {/* </ScalableContent>
+        </ViewportContainer> */}
       </body>
     </html>
   );
