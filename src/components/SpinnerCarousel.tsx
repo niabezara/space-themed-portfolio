@@ -25,7 +25,6 @@ function SpinnerCarousel({
               title={item.title}
               answer={item.answer}
               key={`${index}-${currentIndex}`}
-              resetKey={currentIndex}
             />
           </CarouselItem>
         ))}
