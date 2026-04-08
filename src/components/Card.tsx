@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { cn } from "@/src/lib/utils";
 import useOnClickOutside from "../hooks/useClickOutside";
 import { Icons } from "./shared/Icons";
 
@@ -19,7 +18,7 @@ export function RevealCard({ title, answer }: Props) {
   useOnClickOutside(ref, handleClose);
 
   return (
-    <div className="w-full z-50 absolute -bottom-[57vh] h-fit items-center justify-center flex cursor-pointer">
+    <div className="w-full z-50 absolute -bottom-[60vh] h-fit items-center justify-center flex cursor-pointer">
       <div
         ref={ref}
         onClick={() => setOpen(true)}
@@ -28,7 +27,7 @@ export function RevealCard({ title, answer }: Props) {
         <Icons.borderLeft className="absolute -top-6 -left-8.5 MoveUpDown" />
 
         {open ? (
-          <div className="border-[#CEB7FF] border-[3px] p-13.5 bg-black/30">
+          <div className="border-[#CEB7FF] max-w-208.25 border-[3px] p-13.5 bg-black/30">
             <span className="text-white text-3xl font-bold">{answer}</span>
           </div>
         ) : (
