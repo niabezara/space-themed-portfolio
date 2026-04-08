@@ -127,3 +127,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+.group:hover .MoveUpDown {
+  animation: iconBounce 0.55s ease-in-out infinite alternate;
+}
+
+.group:hover .MoveDownUp {
+  animation: iconBounceReverse 0.55s ease-in-out infinite alternate;
+}
+@keyframes iconBounce {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(2px, 5px);
+  }
+}
+
+@keyframes iconBounceReverse {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-2px, -5px);
+  }
+}

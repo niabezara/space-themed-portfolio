@@ -1,8 +1,8 @@
 import { RevealCard } from "./Card";
-import { data } from "./data";
+import { data } from "../dummyData/data";
 import { Icons } from "./shared/Icons";
 
-import { SlideData } from "./types";
+import { SlideData } from "../types";
 import {
   Carousel,
   CarouselContent,
@@ -27,7 +27,7 @@ function SpinnerCarousel({
             key={index}
             className="h-full flex flex-col justify-between"
           >
-            <div className="pt-[50px] flex flex-col justify-center gap-23.75 items-center">
+            <div className="pt-12.5 flex flex-col justify-center gap-23.75 items-center">
               <div>
                 <Icons.rectangle />
                 <span>{item.main}</span>
@@ -52,7 +52,7 @@ function SpinnerCarousel({
 
 export function CarouselNavigation() {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between ">
       <CarouselPrevious />
       <CarouselNext />
     </div>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Hero from "../components/Hero";
 import SpinnerCarousel from "../components/SpinnerCarousel";
 import { CarouselApi } from "../components/ui/carousel";
-import { data } from "../components/data";
+import { data } from "../dummyData/data";
 
 export default function Home() {
   const [api, setApi] = useState<CarouselApi>();
@@ -18,12 +18,10 @@ export default function Home() {
     });
   }, [api]);
 
-  const currentBg = data[currentIndex].bg;
   const rotation = currentIndex * 90;
 
   return (
     <main className="relative w-screen h-screen overflow-hidden">
-      {/* 🔥 Animated Background */}
       <AnimatePresence>
         {data.map((item, index) =>
           index === currentIndex ? (
@@ -35,7 +33,7 @@ export default function Home() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 0.8 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
